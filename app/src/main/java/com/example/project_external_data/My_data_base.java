@@ -7,7 +7,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class My_data_base extends SQLiteAssetHelper {
 
-    public static final String DB_NAME="cars.db";
+    public static final String DB_NAME="car.db";
     public static final int VERSION=2;
 
 
