@@ -44,29 +44,27 @@ public class DataBase_Acces {
        values.put(My_data_base.CAR_MODLE,car.getModle());
        values.put(My_data_base.CAR_COLOR,car.getColor());
        values.put(My_data_base.CAR_DESCRIPTION,car.getDiscraption());
-//       values.put(My_data_base.CAR_IMAGE,car.getImage());
+     values.put(My_data_base.CAR_IMAGE,car.getImage());
        values.put(My_data_base.CAR_DPL,car.getDistansePerLetter());
 
        Long result= database.insert(My_data_base.CAR_TABLE_NAME,null, values);
        return result !=-1;
-
            }
 
    public ArrayList<Car> get_all_car(){
-
         ArrayList<Car> cars=new ArrayList<>();
+       Cursor cursor= database.rawQuery("select * from "+My_data_base.CAR_TABLE_NAME,null);
 
-       Cursor cursor= database.rawQuery(" select * from "+My_data_base.CAR_TABLE_NAME,null);
-
-       if (cursor.moveToFirst() ){
+       if (cursor.moveToFirst() &&cursor!=null){
            do {
            int id =cursor.getInt(cursor.getColumnIndex(My_data_base.CAR_ID));
            String modle =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_MODLE));
            String color =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_COLOR));
            String discraption =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_DESCRIPTION));
+           String image =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_IMAGE));
            double dpl =cursor.getDouble(cursor.getColumnIndex(My_data_base.CAR_DPL));
 
-           Car car1=new Car(id,modle,color,discraption,dpl);
+           Car car1=new Car(id,modle,color,discraption,image,dpl);
            cars.add(car1);
        }while (cursor.moveToNext());
            cursor.close();
@@ -86,5 +84,50 @@ public class DataBase_Acces {
         return result>0;
     }
 
+
+
+
+
+    public ArrayList<Car> get_search_car(String search_modle){
+        ArrayList<Car> cars=new ArrayList<>();
+     Cursor cursor= database.rawQuery("select * from "+My_data_base.CAR_TABLE_NAME+" WHERE " +My_data_base.CAR_MODLE+" LIKE?",
+         new String[] {search_modle+"%"});
+
+        if (cursor.moveToFirst() &&cursor!=null){
+            do {
+                int id =cursor.getInt(cursor.getColumnIndex(My_data_base.CAR_ID));
+                String modle =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_MODLE));
+                String color =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_COLOR));
+                String discraption =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_DESCRIPTION));
+                String image =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_IMAGE));
+                double dpl =cursor.getDouble(cursor.getColumnIndex(My_data_base.CAR_DPL));
+
+                Car car1=new Car(id,modle,color,discraption,image,dpl);
+                cars.add(car1);
+            }while (cursor.moveToNext());
+            cursor.close();
+        }
+        return cars;
+    }
+
+    public Car get_search_id(int id_car){
+        Cursor cursor= database.rawQuery("select * from "+My_data_base.CAR_TABLE_NAME +" where "+My_data_base.CAR_ID+ " =?",
+                new String []{ id_car+"" });
+
+        if (cursor.moveToFirst() &&cursor!=null){
+
+                int id =cursor.getInt(cursor.getColumnIndex(My_data_base.CAR_ID));
+                String modle =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_MODLE));
+                String color =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_COLOR));
+                String discraption =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_DESCRIPTION));
+                String image =cursor.getString(cursor.getColumnIndex(My_data_base.CAR_IMAGE));
+                double dpl =cursor.getDouble(cursor.getColumnIndex(My_data_base.CAR_DPL));
+
+                Car car1=new Car(id,modle,color,discraption,image,dpl);
+            cursor.close();
+            return car1;
+        }
+        return null;
+    }
 
 }

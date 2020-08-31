@@ -7,11 +7,11 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class My_data_base extends SQLiteAssetHelper {
 
-    public static final String DB_NAME="car.db";
+    public static final String DB_NAME="last_try.db";
     public static final int VERSION=2;
 
 
-    public static final String CAR_TABLE_NAME="Car";
+    public static final String CAR_TABLE_NAME="last";
     public static final String CAR_ID="id";
     public static final String CAR_MODLE="modle";
     public static final String CAR_COLOR="color";

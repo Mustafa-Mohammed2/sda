@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Project_External_Data</string>
+    <string name="car_modle">Modle</string>
+    <string name="et_datials_modle">Modle</string>
+    <string name="et_datials_color">Color</string>
+    <string name="et_datials_Description">Description</string>
+    <string name="et_datials_image">Image</string>
+    <string name="et_datials_dpl">Destance_Per_Letter</string>
 </resources>

@@ -10,21 +10,22 @@ public class Car {
     private double distansePerLetter;
 
 
-    public Car(int id, String modle, String color, String discraption, double distansePerLetter) {
+    public Car(int id, String modle, String color, String discraption, String image, double distansePerLetter) {
         this.id = id;
         this.modle = modle;
         this.color = color;
         this.discraption = discraption;
+        this.image=image;
         this.distansePerLetter = distansePerLetter;
     }
 
-//    public Car(String modle, String color, String discraption, String image, double distansePerLetter) {
-//        this.modle = modle;
-//        this.color = color;
-//        this.discraption = discraption;
-//        this.image = image;
-//        this.distansePerLetter = distansePerLetter;
-//    }
+    public Car(String modle, String color, String discraption, String image, double distansePerLetter) {
+        this.modle = modle;
+        this.color = color;
+        this.discraption = discraption;
+        this.image = image;
+        this.distansePerLetter = distansePerLetter;
+    }
 
     public int getId() {
         return id;

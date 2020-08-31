@@ -5,15 +5,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:cardElevation="15dp"
+    app:cardElevation="10dp"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="13dp"
         >
 
 
     <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_130sdp"
         android:orientation="vertical"
 
         >
@@ -25,47 +25,43 @@
             app:srcCompat="@drawable/gesr"
             android:scaleType="centerCrop"
             android:layout_weight="1"
+
             />
 
-        <LinearLayout
-
-            android:id="@+id/linear_custom"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/custom_car_modle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:text="Modle"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_gravity="center"
             android:layout_weight="1"
 
-            >
-
-            <TextView
-                android:id="@+id/custom_car_modle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="modle"
-                android:layout_marginStart="5dp"
+            />
 
 
-                />
+
 
             <TextView
                 android:id="@+id/custom_car_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="description"
-                android:layout_marginStart="50dp"
-
-
-
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
 
                 />
-        </LinearLayout>
+
 
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
+            android:layout_weight="1"
             >
 
             <TextView
@@ -73,8 +69,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="color"
-                android:layout_marginStart="5dp"
-
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:layout_gravity="start"
+                android:padding="@dimen/_5sdp"
 
                 />
 
@@ -83,12 +81,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="dpl"
-                android:layout_marginStart="50dp"
+
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_weight="1"
 
 
                 />
         </LinearLayout>
-
 
     </LinearLayout>
 
