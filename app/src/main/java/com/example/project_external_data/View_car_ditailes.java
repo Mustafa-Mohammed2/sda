@@ -150,7 +150,7 @@ public class View_car_ditailes extends AppCompatActivity {
                 db.close();
 
                 if (resu) {
-//                   Toast.makeText(this, "image is"+ image, Toast.LENGTH_SHORT).show();
+//                   1212212Toast.makeText(this, "image is"+ image, Toast.LENGTH_SHORT).show();
                     Toast.makeText(this, "car add sucsses", Toast.LENGTH_SHORT).show();
                     setResult(RESUIT_ADD, null);
                     Intent i = new Intent(getBaseContext(), MainActivity.class);
