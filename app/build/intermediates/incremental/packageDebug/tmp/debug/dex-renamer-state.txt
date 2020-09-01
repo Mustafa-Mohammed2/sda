@@ -1,4 +1,4 @@
-#Tue Sep 01 11:21:37 AST 2020
-base.0=G\:\\Project_External_Data\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Sep 01 18:01:28 EEST 2020
+base.0=C\:\\sda\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
