@@ -43,9 +43,9 @@ public class Recycler_Adapter_Car extends RecyclerView.Adapter<Recycler_Adapter_
     public void onBindViewHolder(@NonNull View_holder holder, int position) {
 
         Car car=cars.get(position);
-        if (car.getImage()!=null && !car.getImage().isEmpty()) {
-            holder.imageView.setImageURI(Uri.parse(car.getImage()));
-        }
+//        if (car.getImage()!=null && !car.getImage().isEmpty()) {
+//            holder.imageView.setImageURI(Uri.parse(car.getImage()));
+//        }
         holder.tv_modle.setText(car.getModle());
         holder.tv_color.setText(car.getColor());
         holder.tv_description.setText(car.getDiscraption());
@@ -71,7 +71,7 @@ public class Recycler_Adapter_Car extends RecyclerView.Adapter<Recycler_Adapter_
 
         public View_holder(@NonNull final View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.custome_car_image);
+//            imageView=itemView.findViewById(R.id.custome_car_image);
 
             tv_modle=itemView.findViewById(R.id.custom_car_modle);
             tv_color=itemView.findViewById(R.id.custom_car_color);

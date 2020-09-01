@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     Toolbar toolbar;
     private static final int CAR_REQ_ADD=1;
-    private static final int CAR_REQ_EDIT=1;
+    private static final int CAR_REQ_EDIT=2;
     public static final String CAR_KEY="car_key";
     DataBase_Acces dataBase_acces;
     Recycler_Adapter_Car recycler_adapter;
@@ -68,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i,CAR_REQ_EDIT);
             }
         });
-
-        RecyclerView.LayoutManager lm= new GridLayoutManager(this,2);
-        rv.setHasFixedSize(true);
-        rv.setLayoutManager(lm);
         rv.setAdapter(recycler_adapter);
+        RecyclerView.LayoutManager lm= new GridLayoutManager(this,2);
+        rv.setLayoutManager(lm);
+        rv.setHasFixedSize(true);
+
+
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,12 +126,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==CAR_REQ_ADD && requestCode==RESULT_OK){
+        if(requestCode == CAR_REQ_ADD && requestCode==View_car_ditailes.RESUIT_ADD){
             if (data!=null){
                 dataBase_acces.open();
-              ArrayList carss=dataBase_acces.get_all_car();
+              ArrayList<Car> c=new ArrayList<>();
+                     c= dataBase_acces.get_all_car();
                 dataBase_acces.close();
-                recycler_adapter.setCars(carss);
+                recycler_adapter.setCars(c);
               recycler_adapter.notifyDataSetChanged();
             }
         }

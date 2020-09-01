@@ -25,7 +25,7 @@ public class View_car_ditailes extends AppCompatActivity {
     Toolbar toolbar;
     DataBase_Acces db;
 
-    public static final int RESUIT_ADD=2;
+    public static final int RESUIT_ADD =2;
     private Uri imageuri ;
     private int car_id=-1;
 
@@ -72,9 +72,11 @@ public class View_car_ditailes extends AppCompatActivity {
         });
 
     }
+
+
     private void fill_details(Car car){
-        if (car.getImage() !=null && !car.getImage().equals(""))
-            imageView.setImageURI(Uri.parse(car.getImage()));
+//        if (car.getImage() !=null && !car.getImage().equals(""))
+//            imageView.setImageURI(Uri.parse(car.getImage()));
 
         et_modle.setText(car.getModle());
         et_color.setText(car.getColor());
@@ -136,20 +138,19 @@ public class View_car_ditailes extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.detail_menu_save:
-                image = imageuri.toString();
+               // image = imageuri.toString();
                modle=et_modle.getText().toString();
                color=et_color.getText().toString();
                description=et_description.getText().toString();
                dpl=Double.parseDouble(et_dpl.getText().toString());
 
-
-               Car car =new Car(modle,color,description,image,dpl);
+               Car car =new Car(modle,color,description,dpl);
                db.open();
                boolean resu= db.insert_car(car);
                db.close();
 
                if (resu){
-                   Toast.makeText(this, "image is"+ image, Toast.LENGTH_SHORT).show();
+//                   Toast.makeText(this, "image is"+ image, Toast.LENGTH_SHORT).show();
                    Toast.makeText(this, "car add sucsses", Toast.LENGTH_SHORT).show();
                    setResult(RESUIT_ADD,null);
                    finish();

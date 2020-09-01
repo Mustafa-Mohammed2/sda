@@ -19,11 +19,11 @@ public class Car {
         this.distansePerLetter = distansePerLetter;
     }
 
-    public Car(String modle, String color, String discraption, String image, double distansePerLetter) {
+    public Car(String modle, String color, String discraption,  double distansePerLetter) {
         this.modle = modle;
         this.color = color;
         this.discraption = discraption;
-        this.image = image;
+
         this.distansePerLetter = distansePerLetter;
     }
 
